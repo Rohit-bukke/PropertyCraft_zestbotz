@@ -1,0 +1,62 @@
+[
+  {
+    "reference_id": "PK-VISIT-251850-5682",
+    "created_at": "2026-11-25T18:50:12.516896",
+    "name": "Kabir Mehta",
+    "phone": "+919876543210",
+    "email": "kabir@example.com",
+    "property_id": null,
+    "property_title": "Wave Veridia",
+    "enquiry_type": "site_visit",
+    "preferred_date": "This Saturday",
+    "preferred_time_slot": "Morning (10:30 AM - 12:30 PM)",
+    "message": null,
+    "source": "web_direct",
+    "status": "new"
+  },
+  {
+    "reference_id": "PK-VISIT-202318-5957",
+    "created_at": "2026-11-20T23:18:48.568743",
+    "name": "Kabir Mehta",
+    "phone": "+919876543210",
+    "email": "kabir@example.com",
+    "property_id": null,
+    "property_title": "Wave Veridia",
+    "enquiry_type": "site_visit",
+    "preferred_date": "This Saturday",
+    "preferred_time_slot": "Morning (10:30 AM - 12:30 PM)",
+    "message": null,
+    "source": "web_direct",
+    "status": "new"
+  },
+  {
+    "reference_id": "PK-VISIT-202313-7958",
+    "created_at": "2026-11-20T23:13:18.780125",
+    "name": "Kabir Mehta",
+    "phone": "+919876543210",
+    "email": "kabir@example.com",
+    "property_id": null,
+    "property_title": "Wave Veridia",
+    "enquiry_type": "site_visit",
+    "preferred_date": "This Saturday",
+    "preferred_time_slot": "Morning (10:30 AM - 12:30 PM)",
+    "message": null,
+    "source": "web_direct",
+    "status": "new"
+  },
+  {
+    "reference_id": "PK-VISIT-202237-8568",
+    "created_at": "2026-11-20T22:37:27.035423",
+    "name": "Aarav Gupta",
+    "phone": "9876543210",
+    "email": null,
+    "property_id": null,
+    "property_title": "Wave Veridia",
+    "enquiry_type": "site_visit",
+    "preferred_date": "2026-11-25",
+    "preferred_time_slot": null,
+    "message": null,
+    "source": "web_direct",
+    "status": "new"
+  }
+]

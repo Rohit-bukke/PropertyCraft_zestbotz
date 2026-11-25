@@ -1,0 +1,543 @@
+[
+  {
+    "id": "prop-veridia-wave-city",
+    "slug": "wave-veridia-oakwood-enclave",
+    "title": "Wave Veridia",
+    "subtitle": "Ultra-Luxury Low-Rise Floors & Magnificent 5 BHK Skyvillas",
+    "category": "Villas",
+    "developer": "Wave Infratech (Palafox International Architecture)",
+    "location": "Oakwood Enclave, Wave City, NH-24, Ghaziabad",
+    "sector": "Sector 2 / Oakwood Enclave",
+    "price_starting_inr": 18500000,
+    "price_max_inr": 36500000,
+    "price_starting_formatted": "₹1.85 Cr*",
+    "price_per_sqft": 7750,
+    "configuration": "4 BHK Low-Rise & 5 BHK Skyvillas",
+    "bhk_options": ["4 BHK", "5 BHK"],
+    "rera_id": "UPRERAPRJ13945 / Phase II Approved",
+    "possession_date": "Ready / Phase II Dec 2025",
+    "construction_status": "Ready to Move",
+    "area_range_sqft": "2,385 - 4,089 Sq. Ft.",
+    "plot_size_range_sqyd": "350 - 550 Sq. Yd. Super Area",
+    "tags": ["Ultra Luxury", "Low Rise Living", "Private Terrace", "Home Automation"],
+    "is_featured": true,
+    "is_hot_deal": false,
+    "badge": "Signature Luxury",
+    "hero_image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Wave Veridia sets a benchmark in elite suburban living within Wave City. Designed by world-renowned master architects Palafox Associates, Veridia features exclusive 4 BHK Low-Rise Residences (G+4 with individual lifts) and colossal 5 BHK duplex Skyvillas with double-height ceiling living rooms and private panoramic terraces. Residents enjoy exclusive privileged access to the lavish 30,000 sq.ft. Oakwood Clubhouse.",
+    "key_highlights": [
+      "Palafox Associates (Spain) Architecture",
+      "Only 2 homes per floor with dedicated dual elevators",
+      "Expansive 30,000 sq.ft. Oakwood Clubhouse with Olympic-sized pool",
+      "Italian marble flooring, complete VRV air-conditioning & smart home automation",
+      "Facing 50-acre Central Forest Greenery"
+    ],
+    "amenities": [
+      {"name": "30,000 Sq.Ft Clubhouse", "category": "Leisure", "icon": "shield"},
+      {"name": "Olympic-Size Pool", "category": "Sports", "icon": "waves"},
+      {"name": "Private High-Speed Lift", "category": "Convenience", "icon": "arrow-up-circle"},
+      {"name": "Smart Home Automation", "category": "Tech", "icon": "cpu"},
+      {"name": "EV Charging Bays", "category": "Eco", "icon": "zap"},
+      {"name": "24/7 Multi-Tier Biometric Security", "category": "Safety", "icon": "lock"}
+    ],
+    "floor_plans": [
+      {
+        "name": "4 BHK + Family Lounge + Servant",
+        "bhk": "4 BHK",
+        "area_sqft": 2385,
+        "carpet_area_sqft": 1780,
+        "price_inr": 18500000,
+        "price_formatted": "₹1.85 Cr",
+        "image_url": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "5 BHK Grand Skyvilla with Private Terrace",
+        "bhk": "5 BHK",
+        "area_sqft": 4089,
+        "carpet_area_sqft": 3120,
+        "price_inr": 36500000,
+        "price_formatted": "₹3.65 Cr",
+        "image_url": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Akshardham Temple, Delhi", "distance_km": 24.5, "time_mins": 25, "type": "Highway"},
+      {"destination": "Noida Sector 62 Metro Hub", "distance_km": 14.0, "time_mins": 15, "type": "Metro"},
+      {"destination": "Columbia Asia / Manipal Hospital", "distance_km": 6.5, "time_mins": 8, "type": "Hospital"},
+      {"destination": "Delhi-Meerut Expressway Tollway", "distance_km": 1.2, "time_mins": 3, "type": "Highway"},
+      {"destination": "Noida International Airport (Jewar)", "distance_km": 62.0, "time_mins": 50, "type": "Airport"}
+    ],
+    "brochure_url": "/downloads/brochures/wave-veridia-official-brochure.pdf",
+    "virtual_tour_url": "https://my.matterport.com/show/?m=sample-veridia",
+    "rental_yield_pct": 5.4,
+    "projected_roi_3yr_pct": 42.0
+  },
+  {
+    "id": "prop-eligo-wave-city",
+    "slug": "wave-eligo-smart-homes",
+    "title": "Wave Eligo",
+    "subtitle": "Mid-Rise Premium 3 BHK Smart Residences Overlooking Central Greens",
+    "category": "Apartments",
+    "developer": "Wave Infratech",
+    "location": "Greenwood Enclave, Wave City, NH-24, Ghaziabad",
+    "sector": "Sector 4 / Greenwood Enclave",
+    "price_starting_inr": 9800000,
+    "price_max_inr": 14500000,
+    "price_starting_formatted": "₹98.0 Lakh*",
+    "price_per_sqft": 6490,
+    "configuration": "3 BHK + 3T Smart Residences",
+    "bhk_options": ["3 BHK"],
+    "rera_id": "UPRERAPRJ14832",
+    "possession_date": "Ready for Fit-out",
+    "construction_status": "Ready to Move",
+    "area_range_sqft": "1,510 Sq. Ft.",
+    "plot_size_range_sqyd": null,
+    "tags": ["Smart Homes", "80% Green Open Area", "Balcony Greens", "Modern Clubhouse"],
+    "is_featured": true,
+    "is_hot_deal": true,
+    "badge": "Best Seller 2026",
+    "hero_image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Wave Eligo is a premier mid-rise enclave crafted for upwardly mobile urban families who demand both nature and digital convenience. Located within Greenwood Enclave right alongside Wave City's central boulevard, Eligo offers meticulously planned 3 BHK apartments with wide wrap-around balconies, intelligent access locks, semi-modular kitchens, and unhindered podium garden views.",
+    "key_highlights": [
+      "3-side open residences with uninterrupted skyline and landscape views",
+      "Equipped with UPVC soundproof glazed windows and digital door locks",
+      "Modern Clubhouse with infinity splash pool, squash courts, and yoga pavilion",
+      "Direct pedestrian connection to the green eco-park and cycle track",
+      "Complete underground power cabling with 24x7 smart utility metering"
+    ],
+    "amenities": [
+      {"name": "Infinity Splash Pool", "category": "Sports", "icon": "waves"},
+      {"name": "Squash & Badminton Courts", "category": "Sports", "icon": "award"},
+      {"name": "Smart Keyless Lock Entry", "category": "Tech", "icon": "key"},
+      {"name": "Yoga & Meditation Deck", "category": "Wellness", "icon": "heart"},
+      {"name": "High-Speed Fiber Optics", "category": "Tech", "icon": "wifi"},
+      {"name": "Children's Sensory Park", "category": "Family", "icon": "smile"}
+    ],
+    "floor_plans": [
+      {
+        "name": "3 BHK + 3 Toilet Premium (Type A)",
+        "bhk": "3 BHK",
+        "area_sqft": 1510,
+        "carpet_area_sqft": 1058,
+        "price_inr": 9800000,
+        "price_formatted": "₹98 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Delhi-Meerut Expressway", "distance_km": 1.5, "time_mins": 3, "type": "Highway"},
+      {"destination": "Noida Electronic City Metro (Blue Line)", "distance_km": 15.0, "time_mins": 16, "type": "Metro"},
+      {"destination": "Fortis Hospital Noida", "distance_km": 16.5, "time_mins": 18, "type": "Hospital"},
+      {"destination": "DPS Wave City Campus", "distance_km": 1.0, "time_mins": 2, "type": "Education"}
+    ],
+    "brochure_url": "/downloads/brochures/wave-eligo-brochure.pdf",
+    "virtual_tour_url": "https://my.matterport.com/show/?m=sample-eligo",
+    "rental_yield_pct": 5.1,
+    "projected_roi_3yr_pct": 36.0
+  },
+  {
+    "id": "prop-dream-homes-wave-city",
+    "slug": "wave-dream-homes-sector-5",
+    "title": "Wave Dream Homes",
+    "subtitle": "Ready-to-Move 1, 2 & 3 BHK Value Apartments with Dream Bazaar Access",
+    "category": "Apartments",
+    "developer": "Wave Infratech",
+    "location": "Sector 5, Wave City, NH-24, Ghaziabad",
+    "sector": "Sector 5",
+    "price_starting_inr": 3200000,
+    "price_max_inr": 6800000,
+    "price_starting_formatted": "₹32.0 Lakh*",
+    "price_per_sqft": 5950,
+    "configuration": "1, 2 & 3 BHK High-Efficiency Apartments",
+    "bhk_options": ["1 BHK", "2 BHK", "3 BHK"],
+    "rera_id": "UPRERAPRJ6241 / Ready OC Received",
+    "possession_date": "Ready to Move (OC Issued)",
+    "construction_status": "Ready to Move",
+    "area_range_sqft": "538 - 1,005 Sq. Ft.",
+    "plot_size_range_sqyd": null,
+    "tags": ["Ready to Move", "High Rental Yield", "Near Commercial Hub", "Budget Friendly"],
+    "is_featured": true,
+    "is_hot_deal": false,
+    "badge": "100% Ready (OC Recd)",
+    "hero_image": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Wave Dream Homes represents the ultimate sweet spot between affordability, smart city amenities, and immediate habitability. Situated in Sector 5 right next to Dream Bazaar, these compact yet space-maximized homes are occupied by over 800+ families. Ideal for first-time buyers and rental-income seekers looking for instant tenant demand from nearby industrial & tech corridors.",
+    "key_highlights": [
+      "Full Occupancy Certificate (OC) received, immediate registry possible",
+      "Operational commercial market 'Dream Bazaar' within 100 meters",
+      "High rental return with instant occupancy",
+      "Dedicated power backup, lifts, and perimeter gated surveillance",
+      "Subsidized bank loan approvals from SBI, HDFC, ICICI, and PNB"
+    ],
+    "amenities": [
+      {"name": "Dream Bazaar Retail Market", "category": "Retail", "icon": "shopping-bag"},
+      {"name": "Community Hall & Club", "category": "Social", "icon": "users"},
+      {"name": "Kids Play Area", "category": "Family", "icon": "smile"},
+      {"name": "Jogging Tracks", "category": "Sports", "icon": "activity"},
+      {"name": "24/7 Security & CCTV", "category": "Safety", "icon": "shield"}
+    ],
+    "floor_plans": [
+      {
+        "name": "1 BHK Compact Residence",
+        "bhk": "1 BHK",
+        "area_sqft": 538,
+        "carpet_area_sqft": 395,
+        "price_inr": 3200000,
+        "price_formatted": "₹32 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "2 BHK Efficient Comfort",
+        "bhk": "2 BHK",
+        "area_sqft": 808,
+        "carpet_area_sqft": 585,
+        "price_inr": 4850000,
+        "price_formatted": "₹48.5 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "3 BHK Family Haven",
+        "bhk": "3 BHK",
+        "area_sqft": 1005,
+        "carpet_area_sqft": 735,
+        "price_inr": 6800000,
+        "price_formatted": "₹68 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Delhi-Meerut Expressway NH-24", "distance_km": 1.0, "time_mins": 2, "type": "Highway"},
+      {"destination": "Ghaziabad Railway Station", "distance_km": 11.5, "time_mins": 18, "type": "Hub"},
+      {"destination": "ABES Engineering College", "distance_km": 7.0, "time_mins": 9, "type": "Education"},
+      {"destination": "Anand Vihar ISBT", "distance_km": 21.0, "time_mins": 22, "type": "Hub"}
+    ],
+    "brochure_url": "/downloads/brochures/wave-dream-homes-brochure.pdf",
+    "virtual_tour_url": null,
+    "rental_yield_pct": 5.8,
+    "projected_roi_3yr_pct": 32.0
+  },
+  {
+    "id": "prop-residential-plots-wave-city",
+    "slug": "wave-city-freehold-residential-plots",
+    "title": "Wave City Residential Plots",
+    "subtitle": "Freehold Gated Villa Plots with Wide Roads & Smart Underground Infrastructure",
+    "category": "Plots",
+    "developer": "Wave Infratech High-Tech Township",
+    "location": "Oakwood, Palmwood, Pinewood & Rosewood Enclaves, Wave City",
+    "sector": "Sectors 2, 3, 6 & 7",
+    "price_starting_inr": 7500000,
+    "price_max_inr": 32000000,
+    "price_starting_formatted": "₹75.0 Lakh*",
+    "price_per_sqft": 5555,
+    "configuration": "135, 194, 287, 404 & 500 Sq. Yd. Plots",
+    "bhk_options": ["Plots / Custom Villa"],
+    "rera_id": "UPRERAPRJ3917 / Freehold Allotment",
+    "possession_date": "Immediate Possession Available",
+    "construction_status": "Ready to Move",
+    "area_range_sqft": "1,215 - 4,500 Sq. Ft.",
+    "plot_size_range_sqyd": "135 - 500 Sq. Yd.",
+    "tags": ["Freehold Plots", "Immediate Registry", "Custom Villa Permitted", "Highest Capital Appreciation"],
+    "is_featured": true,
+    "is_hot_deal": true,
+    "badge": "High Demand Plots",
+    "hero_image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Construct your dream bespoke bungalow or multi-floor family haven on official freehold plots within Wave City. Featuring master-planned arterial roadways (30-meter to 60-meter wide), 100% underground drainage, sewage and fiber optics networks, and 24x7 automated command-and-control center monitoring. These plots represent the most liquid and rapidly appreciating land asset along the entire NH-24 / NH-9 corridor.",
+    "key_highlights": [
+      "Sizes: 135 Sq. Yd. (113 sqm), 194 Sq. Yd. (162 sqm), 287 Sq. Yd. (240 sqm), up to 500 Sq. Yd.",
+      "Clear title freehold plots with immediate registry and bank mortgage facility",
+      "G+3 floor construction sanctioned under modern building bylaws",
+      "Pre-certified Platinum Green Smart City by IGBC",
+      "Direct walking distance to Central Lakes, Enclave Clubhouses, and Top Schools"
+    ],
+    "amenities": [
+      {"name": "60m Wide Boulevard Roads", "category": "Infrastructure", "icon": "navigation"},
+      {"name": "Smart Water Metering", "category": "Tech", "icon": "droplet"},
+      {"name": "Command Center Surveillance", "category": "Security", "icon": "video"},
+      {"name": "Underground Power Lines", "category": "Eco", "icon": "zap"},
+      {"name": "Dedicated Rainwater Harvesting", "category": "Eco", "icon": "cloud-rain"}
+    ],
+    "floor_plans": [
+      {
+        "name": "135 Sq. Yd. Plot (Approx 1,215 Sq. Ft.)",
+        "bhk": "Villa Plot",
+        "area_sqft": 1215,
+        "carpet_area_sqft": 1215,
+        "price_inr": 7500000,
+        "price_formatted": "₹75 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "194 Sq. Yd. Plot (Approx 1,746 Sq. Ft.)",
+        "bhk": "Villa Plot",
+        "area_sqft": 1746,
+        "carpet_area_sqft": 1746,
+        "price_inr": 11200000,
+        "price_formatted": "₹1.12 Cr",
+        "image_url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "287 Sq. Yd. Luxury Plot (Approx 2,583 Sq. Ft.)",
+        "bhk": "Villa Plot",
+        "area_sqft": 2583,
+        "carpet_area_sqft": 2583,
+        "price_inr": 17500000,
+        "price_formatted": "₹1.75 Cr",
+        "image_url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Delhi Gate / Connaught Place via DME", "distance_km": 28.0, "time_mins": 30, "type": "Highway"},
+      {"destination": "Noida Sector 62 / Indirapuram", "distance_km": 14.0, "time_mins": 15, "type": "Hub"},
+      {"destination": "Wave Galleria Mall", "distance_km": 0.8, "time_mins": 2, "type": "Retail"},
+      {"destination": "Max Super Speciality Hospital", "distance_km": 15.0, "time_mins": 18, "type": "Hospital"}
+    ],
+    "brochure_url": "/downloads/brochures/wave-city-plots-layout-map.pdf",
+    "virtual_tour_url": null,
+    "rental_yield_pct": 3.8,
+    "projected_roi_3yr_pct": 48.0
+  },
+  {
+    "id": "prop-wave-galleria-commercial",
+    "slug": "wave-galleria-commercial-sector-3",
+    "title": "Wave Galleria Commercial",
+    "subtitle": "5-Level Shopping Hub, High-Street Retail, Food Court & Corporate Suites",
+    "category": "Commercial",
+    "developer": "Wave Infratech Commercial Division",
+    "location": "Sector 3, Wave City, NH-24, Ghaziabad",
+    "sector": "Sector 3 / Main Boulevard",
+    "price_starting_inr": 3800000,
+    "price_max_inr": 18000000,
+    "price_starting_formatted": "₹38.0 Lakh*",
+    "price_per_sqft": 11500,
+    "configuration": "Retail Shops, Food Outlets & Office Spaces",
+    "bhk_options": ["Commercial / Retail"],
+    "rera_id": "UPRERAPRJ2941",
+    "possession_date": "Ready & Operational",
+    "construction_status": "Ready to Move",
+    "area_range_sqft": "180 - 1,200 Sq. Ft.",
+    "plot_size_range_sqyd": null,
+    "tags": ["High Footfall", "Operational Commercial", "Captive 20k+ Population", "Assured Rental Options"],
+    "is_featured": true,
+    "is_hot_deal": false,
+    "badge": "Operational Hub",
+    "hero_image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Wave Galleria is the undisputed commercial anchor and bustling lifestyle nerve-center of Wave City. Spread over 2.5 acres across five expansive levels, it houses functional supermarkets, pharmacy chains, multi-cuisine restaurants, banks, and boutique offices. PropertyKraft maintains its flagship advisory office right here on the 2nd Floor (SF-102), providing immediate on-ground assistance.",
+    "key_highlights": [
+      "PropertyKraft Head Office located here (SF-102)",
+      "Captive footfall from over 3,000+ settled families living in nearby enclaves",
+      "Multi-tier basement parking accommodating over 500+ vehicles",
+      "Dedicated food court and open-air rooftop café terrace",
+      "Instant lease-out demand with high commercial yields up to 7.8% p.a."
+    ],
+    "amenities": [
+      {"name": "Multi-Level Escalators & Elevators", "category": "Convenience", "icon": "arrow-up"},
+      {"name": "Central Air Conditioning", "category": "Comfort", "icon": "wind"},
+      {"name": "Food Court & Dining Terraces", "category": "F&B", "icon": "coffee"},
+      {"name": "500+ Car Basement Parking", "category": "Parking", "icon": "car"},
+      {"name": "24/7 Power Backup & Fire Safety", "category": "Safety", "icon": "shield-check"}
+    ],
+    "floor_plans": [
+      {
+        "name": "Ground Floor High-Street Retail Shop",
+        "bhk": "Retail Space",
+        "area_sqft": 240,
+        "carpet_area_sqft": 175,
+        "price_inr": 4800000,
+        "price_formatted": "₹48 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "1st Floor Retail / Clinic Space",
+        "bhk": "Commercial Space",
+        "area_sqft": 360,
+        "carpet_area_sqft": 260,
+        "price_inr": 5400000,
+        "price_formatted": "₹54 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "2nd Floor Corporate Office Suite",
+        "bhk": "Office Space",
+        "area_sqft": 650,
+        "carpet_area_sqft": 480,
+        "price_inr": 7200000,
+        "price_formatted": "₹72 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Delhi-Meerut Expressway Interchange", "distance_km": 0.5, "time_mins": 1, "type": "Highway"},
+      {"destination": "Noida Sector 62 IT Parks", "distance_km": 14.2, "time_mins": 15, "type": "Hub"},
+      {"destination": "Indirapuram Habitat Centre", "distance_km": 12.0, "time_mins": 13, "type": "Hub"}
+    ],
+    "brochure_url": "/downloads/brochures/wave-galleria-brochure.pdf",
+    "virtual_tour_url": null,
+    "rental_yield_pct": 7.6,
+    "projected_roi_3yr_pct": 45.0
+  },
+  {
+    "id": "prop-ska-divine-wave-city",
+    "slug": "ska-divine-wave-city-nh24",
+    "title": "SKA Divine & Arcadia",
+    "subtitle": "Contemporary High-Rise 3 & 4 BHK Towers with Ultra-Modern Amenities",
+    "category": "Apartments",
+    "developer": "SKA Group",
+    "location": "Sector 3, Wave City, NH-24, Ghaziabad",
+    "sector": "Sector 3",
+    "price_starting_inr": 8500000,
+    "price_max_inr": 16500000,
+    "price_starting_formatted": "₹85.0 Lakh*",
+    "price_per_sqft": 6200,
+    "configuration": "3 & 4 BHK Premium Apartments",
+    "bhk_options": ["3 BHK", "4 BHK"],
+    "rera_id": "UPRERAPRJ17849",
+    "possession_date": "Dec 2026",
+    "construction_status": "Under Construction",
+    "area_range_sqft": "1,350 - 2,450 Sq. Ft.",
+    "plot_size_range_sqyd": null,
+    "tags": ["Modern Towers", "IGBC Pre-Certified", "Clubhouse", "Under Construction"],
+    "is_featured": false,
+    "is_hot_deal": true,
+    "badge": "Hot New Launch",
+    "hero_image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "SKA Divine delivers sleek metropolitan high-rise living right within the expansive horizons of Wave City. Crafted with Mivan aluminum shuttering for earthquake-resistant strength, these contemporary homes offer expansive living layouts, dedicated work-from-home corners, and a lavish clubhouse overlooking lush manicured theme gardens.",
+    "key_highlights": [
+      "Advanced Mivan shuttering monolithic construction technology",
+      "Dual clubhouse with temperature-controlled swimming pool",
+      "Rooftop observatory and star-gazing deck",
+      "Adjacent to SKA Arcadia high-street market"
+    ],
+    "amenities": [
+      {"name": "Temperature Controlled Pool", "category": "Sports", "icon": "waves"},
+      {"name": "Mini Cinema Hall", "category": "Entertainment", "icon": "film"},
+      {"name": "Gymnasium & Aerobics", "category": "Fitness", "icon": "activity"}
+    ],
+    "floor_plans": [
+      {
+        "name": "3 BHK Smart Luxury",
+        "bhk": "3 BHK",
+        "area_sqft": 1350,
+        "carpet_area_sqft": 940,
+        "price_inr": 8500000,
+        "price_formatted": "₹85 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "4 BHK Grand Penthouse",
+        "bhk": "4 BHK",
+        "area_sqft": 2450,
+        "carpet_area_sqft": 1820,
+        "price_inr": 16500000,
+        "price_formatted": "₹1.65 Cr",
+        "image_url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Delhi-Meerut Expressway", "distance_km": 1.2, "time_mins": 3, "type": "Highway"},
+      {"destination": "Noida Sector 62", "distance_km": 14.5, "time_mins": 15, "type": "Metro"}
+    ],
+    "brochure_url": "/downloads/brochures/ska-divine-brochure.pdf",
+    "virtual_tour_url": null,
+    "rental_yield_pct": 5.0,
+    "projected_roi_3yr_pct": 39.0
+  },
+  {
+    "id": "prop-wave-executive-floors",
+    "slug": "wave-executive-floors-kingwood",
+    "title": "Wave Executive Floors",
+    "subtitle": "Independent Low-Rise G+2 Floors with Private Lawn & Terrace Rights",
+    "category": "Villas",
+    "developer": "Wave Infratech",
+    "location": "Kingwood & Palmwood Enclave, Wave City",
+    "sector": "Sector 2 & 3",
+    "price_starting_inr": 6500000,
+    "price_max_inr": 11500000,
+    "price_starting_formatted": "₹65.0 Lakh*",
+    "price_per_sqft": 6190,
+    "configuration": "2 & 3 BHK Independent Floors",
+    "bhk_options": ["2 BHK", "3 BHK"],
+    "rera_id": "UPRERAPRJ8821 / Ready to Move",
+    "possession_date": "Ready to Move",
+    "construction_status": "Ready to Move",
+    "area_range_sqft": "900 - 1,450 Sq. Ft.",
+    "plot_size_range_sqyd": "112 - 180 Sq. Yd.",
+    "tags": ["Independent Floor", "Private Terrace", "Low Density Living", "G+2 Structure"],
+    "is_featured": false,
+    "is_hot_deal": false,
+    "badge": "Independent Living",
+    "hero_image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Experience the peaceful charm of an independent floor without the hassles of standalone plotting. Wave Executive Floors offers boutique G+2 buildings nestled along tree-lined community roads. Ground floor buyers enjoy dedicated manicured lawns, while top-floor units command exclusive terrace rights.",
+    "key_highlights": [
+      "Boutique low-density living with private car parking bays",
+      "Individual ownership with separate registry per floor",
+      "Equipped with modular woodwork, granite counters, and designer sanitaryware",
+      "Within 3 minutes reach of Wave Galleria and Central Park"
+    ],
+    "amenities": [
+      {"name": "Private Lawn / Terrace", "category": "Luxury", "icon": "home"},
+      {"name": "Covered Car Parking", "category": "Parking", "icon": "car"},
+      {"name": "24/7 Security Patrol", "category": "Safety", "icon": "shield"}
+    ],
+    "floor_plans": [
+      {
+        "name": "2 BHK Independent Floor",
+        "bhk": "2 BHK",
+        "area_sqft": 900,
+        "carpet_area_sqft": 680,
+        "price_inr": 6500000,
+        "price_formatted": "₹65 Lakh",
+        "image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        "name": "3 BHK Premium Floor with Terrace",
+        "bhk": "3 BHK",
+        "area_sqft": 1450,
+        "carpet_area_sqft": 1080,
+        "price_inr": 11500000,
+        "price_formatted": "₹1.15 Cr",
+        "image_url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80"
+      }
+    ],
+    "connectivity": [
+      {"destination": "Delhi Meerut Expressway", "distance_km": 1.5, "time_mins": 3, "type": "Highway"},
+      {"destination": "Noida Sector 62", "distance_km": 15.0, "time_mins": 16, "type": "Metro"}
+    ],
+    "brochure_url": "/downloads/brochures/wave-executive-floors-brochure.pdf",
+    "virtual_tour_url": null,
+    "rental_yield_pct": 5.2,
+    "projected_roi_3yr_pct": 37.0
+  }
+]

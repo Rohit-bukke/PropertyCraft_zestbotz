@@ -1,0 +1,35 @@
+[
+  {
+    "id": "test-1",
+    "name": "Dr. Sameer & Ritu Malhotra",
+    "property_bought": "Wave Veridia (Oakwood Enclave - 4 BHK)",
+    "role": "Senior Consultant Physician, Max Hospital",
+    "location": "Moved from Indirapuram",
+    "rating": 5,
+    "text": "PropertyKraft was instrumental in our shift from Indirapuram to Wave City. Rohit and his advisory team provided direct builder pricing with complete transparency. They took us through the master plan, verified the RERA documentation, and arranged multiple site visits in their golf cart. Living in Veridia with 50 acres of greenery has transformed our family's health and lifestyle.",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    "verified": true
+  },
+  {
+    "id": "test-2",
+    "name": "Vikramaditya Chauhan",
+    "property_bought": "Residential Plot (287 Sq. Yd.)",
+    "role": "NRI Investor & Tech Entrepreneur",
+    "location": "Dubai, UAE",
+    "rating": 5,
+    "text": "Investing from Dubai requires 100% dependable on-ground partners. PropertyKraft handled everything remotely—from virtual site video walkthroughs to title deeds and registry documentation at Ghaziabad registrar office. The capital appreciation on Wave City plots has outperformed my Noida expressway assets by over 24% in the last 2 years.",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    "verified": true
+  },
+  {
+    "id": "test-3",
+    "name": "Ananya Sharma & Rahul Saxena",
+    "property_bought": "Wave Eligo (3 BHK Smart Home)",
+    "role": "Lead Architects & Designers",
+    "location": "Wave City Sector 4",
+    "rating": 5,
+    "text": "As architects, layout efficiency and natural cross-ventilation were our non-negotiables. PropertyKraft didn't just push sales; they provided side-by-side comparative matrices comparing Eligo against competing projects across NH-24. We closed our dream home in two visits with zero brokerage. Highly recommended!",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+    "verified": true
+  }
+]
