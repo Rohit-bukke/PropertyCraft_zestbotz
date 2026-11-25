@@ -11,23 +11,25 @@ export default function ComparisonDock({
 
   return (
     <div className="comparison-dock animate-fade-in">
-      <div style={{
-        padding: "0.85rem 1.35rem",
-        borderRadius: "var(--radius-xl)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: "1rem",
-        flexWrap: "wrap",
-        backgroundColor: "#FFFFFF",
-        border: "1px solid #E2E8F0",
-        boxShadow: "0 12px 35px -5px rgba(15, 23, 42, 0.14), 0 4px 12px -2px rgba(15, 23, 42, 0.05)"
-      }}>
+      <div 
+        className="comparison-dock-body"
+        style={{
+          padding: "0.75rem 1.25rem",
+          borderRadius: "var(--radius-xl)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "0.85rem",
+          backgroundColor: "#FFFFFF",
+          border: "1px solid #E2E8F0",
+          boxShadow: "0 12px 35px -5px rgba(15, 23, 42, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.05)"
+        }}
+      >
         {/* Left count indicator */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
           <div style={{
-            width: "34px",
-            height: "34px",
+            width: "32px",
+            height: "32px",
             borderRadius: "50%",
             background: "var(--gold-primary)",
             color: "#FFFFFF",
@@ -35,22 +37,23 @@ export default function ComparisonDock({
             alignItems: "center",
             justifyContent: "center",
             fontWeight: 800,
-            fontSize: "0.85rem"
+            fontSize: "0.82rem",
+            flexShrink: 0
           }}>
             {selectedProperties.length}
           </div>
           <div>
-            <div style={{ fontWeight: 700, color: "#0F172A", fontSize: "0.9rem" }}>
-              Properties in Comparison
+            <div style={{ fontWeight: 700, color: "#0F172A", fontSize: "0.86rem", lineHeight: 1.2 }}>
+              Compare Properties
             </div>
-            <div style={{ fontSize: "0.74rem", color: "#64748B" }}>
-              Max 3 properties (Side-by-side specs)
+            <div className="d-none d-sm-block" style={{ fontSize: "0.72rem", color: "#64748B" }}>
+              Max 3 properties
             </div>
           </div>
         </div>
 
-        {/* Middle thumbnails */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+        {/* Middle thumbnails (Scrollable / Hidden on very small phones if space constrained) */}
+        <div className="d-none d-md-flex align-items-center gap-2 overflow-auto" style={{ maxWidth: "380px" }}>
           {selectedProperties.map((prop) => (
             <div
               key={prop.id}
@@ -58,19 +61,20 @@ export default function ComparisonDock({
                 position: "relative",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.45rem",
+                gap: "0.4rem",
                 backgroundColor: "#F8FAFC",
                 border: "1px solid #E2E8F0",
-                padding: "0.35rem 0.6rem",
-                borderRadius: "var(--radius-md)"
+                padding: "0.3rem 0.55rem",
+                borderRadius: "var(--radius-md)",
+                flexShrink: 0
               }}
             >
               <img
                 src={prop.hero_image}
                 alt={prop.title}
-                style={{ width: "28px", height: "28px", borderRadius: "4px", objectFit: "cover" }}
+                style={{ width: "26px", height: "26px", borderRadius: "4px", objectFit: "cover" }}
               />
-              <span style={{ fontSize: "0.8rem", fontWeight: 600, color: "#1E293B", maxWidth: "95px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <span style={{ fontSize: "0.78rem", fontWeight: 600, color: "#1E293B", maxWidth: "90px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {prop.title}
               </span>
               <button
@@ -89,24 +93,24 @@ export default function ComparisonDock({
                 }}
                 title="Remove"
               >
-                <X size={13} />
+                <X size={12} />
               </button>
             </div>
           ))}
         </div>
 
         {/* Right CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+        <div className="d-flex align-items-center gap-2 comparison-dock-actions">
           <button
             onClick={onClearAll}
             style={{
               background: "none",
               border: "none",
               color: "#64748B",
-              fontSize: "0.82rem",
+              fontSize: "0.8rem",
               fontWeight: 600,
               cursor: "pointer",
-              padding: "0.4rem"
+              padding: "0.35rem 0.5rem"
             }}
           >
             Clear
@@ -115,10 +119,10 @@ export default function ComparisonDock({
           <button
             onClick={onOpenComparison}
             className="btn-gold"
-            style={{ padding: "0.55rem 1.15rem", fontSize: "0.85rem" }}
+            style={{ padding: "0.5rem 1rem", fontSize: "0.82rem" }}
           >
             <Scale size={14} />
-            <span>Compare Now ({selectedProperties.length})</span>
+            <span>Compare ({selectedProperties.length})</span>
             <ArrowRight size={14} />
           </button>
         </div>

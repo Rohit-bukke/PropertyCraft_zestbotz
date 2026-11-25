@@ -27,7 +27,7 @@ export default function SiteVisitModal({
   );
   const [visitDate, setVisitDate] = useState("This Saturday");
   const [timeSlot, setTimeSlot] = useState("Morning (10:30 AM - 12:30 PM)");
-  const [pickupOption, setPickupOption] = useState("wave_galleria"); // 'wave_galleria', 'noida_62', 'vaishali', 'direct'
+  const [pickupOption, setPickupOption] = useState("wave_galleria");
   const [golfCartRequested, setGolfCartRequested] = useState(true);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -72,7 +72,7 @@ export default function SiteVisitModal({
   return (
     <div className="modal-overlay">
       <div 
-        className="animate-fade-in"
+        className="animate-fade-in modal-dialog-responsive"
         style={{
           width: "100%",
           maxWidth: "640px",
@@ -84,9 +84,9 @@ export default function SiteVisitModal({
           border: "1px solid #E2E8F0"
         }}
       >
-        {/* Header - Clean White */}
+        {/* Header */}
         <div style={{
-          padding: "1.25rem 1.75rem",
+          padding: "1.25rem 1.5rem",
           borderBottom: "1px solid #E2E8F0",
           display: "flex",
           justifyContent: "space-between",
@@ -98,19 +98,20 @@ export default function SiteVisitModal({
               <Calendar size={14} />
               VIP PropertyKraft Concierge
             </div>
-            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.35rem", color: "#0F172A", marginTop: "0.2rem" }}>
+            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "clamp(1.15rem, 2.5vw, 1.35rem)", color: "#0F172A", marginTop: "0.2rem", margin: 0 }}>
               Schedule a Guided Site Visit
             </h3>
           </div>
 
           <button
             onClick={onClose}
+            aria-label="Close site visit"
             style={{
               backgroundColor: "#F1F5F9",
               border: "1px solid #E2E8F0",
               borderRadius: "50%",
-              width: "36px",
-              height: "36px",
+              width: "34px",
+              height: "34px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -118,59 +119,57 @@ export default function SiteVisitModal({
               cursor: "pointer",
               transition: "background-color 0.2s"
             }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#E2E8F0"}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#F1F5F9"}
           >
-            <X size={18} />
+            <X size={17} />
           </button>
         </div>
 
         {/* Content */}
-        <div style={{ padding: "1.75rem", backgroundColor: "#FFFFFF" }}>
+        <div style={{ padding: "1.25rem", backgroundColor: "#FFFFFF" }}>
           {isSuccess ? (
-            <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
+            <div style={{ textAlign: "center", padding: "1rem 0" }}>
               <div style={{
-                width: "68px",
-                height: "68px",
+                width: "60px",
+                height: "60px",
                 borderRadius: "50%",
                 backgroundColor: "#DCFCE7",
                 border: "2px solid #86EFAC",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                margin: "0 auto 1.25rem",
+                margin: "0 auto 1rem",
                 color: "#16A34A"
               }}>
-                <CheckCircle size={36} />
+                <CheckCircle size={32} />
               </div>
 
-              <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: "1.55rem", color: "#0F172A", marginBottom: "0.5rem" }}>
+              <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: "clamp(1.3rem, 3vw, 1.55rem)", color: "#0F172A", marginBottom: "0.4rem" }}>
                 VIP Site Visit Confirmed!
               </h4>
 
-              <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: "460px", margin: "0 auto 1.5rem" }}>
+              <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.6, maxWidth: "460px", margin: "0 auto 1.25rem" }}>
                 Thank you <strong>{name}</strong>! Your guided inspection for <strong>{selectedPropertyTitle}</strong> has been logged in our advisory schedule for <strong>{visitDate}</strong> ({timeSlot}).
               </p>
 
-              {/* Reference ID card - Light Clean Accent */}
+              {/* Reference ID card */}
               <div style={{
                 backgroundColor: "#FEF3C7",
                 border: "1px solid #FDE68A",
                 borderRadius: "var(--radius-lg)",
-                padding: "1rem",
-                marginBottom: "1.5rem",
+                padding: "0.85rem",
+                marginBottom: "1.25rem",
                 textAlign: "center"
               }}>
-                <div style={{ fontSize: "0.75rem", color: "#92400E", textTransform: "uppercase", fontWeight: 700 }}>Booking Reference Pass</div>
-                <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0F172A", letterSpacing: "0.05em", marginTop: "2px" }}>
+                <div style={{ fontSize: "0.72rem", color: "#92400E", textTransform: "uppercase", fontWeight: 700 }}>Booking Reference Pass</div>
+                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0F172A", letterSpacing: "0.05em", marginTop: "2px" }}>
                   {bookingRef}
                 </div>
-                <div style={{ fontSize: "0.8rem", color: "#B45309", marginTop: "4px", fontWeight: 600 }}>
+                <div style={{ fontSize: "0.76rem", color: "#B45309", marginTop: "3px", fontWeight: 600 }}>
                   Assigned Concierge: Wave Galleria SF-102 Office Team
                 </div>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <div className="d-flex flex-column gap-2">
                 <a
                   href={`https://wa.me/919212224545?text=Hello%20PropertyKraft,%20my%20Site%20Visit%20Pass%20is%20${bookingRef}%20for%20${encodeURIComponent(selectedPropertyTitle)}.`}
                   target="_blank"
@@ -178,36 +177,35 @@ export default function SiteVisitModal({
                   style={{
                     backgroundColor: "#16A34A",
                     color: "#FFFFFF",
-                    padding: "0.85rem 1.25rem",
+                    padding: "0.75rem 1.25rem",
                     borderRadius: "var(--radius-md)",
                     fontWeight: 700,
                     textDecoration: "none",
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "0.5rem",
-                    fontSize: "0.92rem",
-                    boxShadow: "0 2px 8px rgba(22, 163, 74, 0.25)"
+                    gap: "0.45rem",
+                    fontSize: "0.88rem"
                   }}
                 >
                   <MessageSquare size={16} />
-                  Connect with Site Relationship Manager on WhatsApp
+                  Connect with Relationship Manager on WhatsApp
                 </a>
 
                 <button
                   onClick={onClose}
-                  className="btn-secondary"
-                  style={{ width: "100%", justifyContent: "center" }}
+                  className="btn-secondary w-100"
+                  style={{ justifyContent: "center" }}
                 >
                   Return to Exploration
                 </button>
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+            <form onSubmit={handleSubmit} className="d-flex flex-column gap-3">
               {/* Target Project Selection */}
               <div>
-                <label style={{ display: "block", fontSize: "0.75rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.35rem" }}>
+                <label style={{ display: "block", fontSize: "0.72rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.3rem" }}>
                   Project or Segment to Inspect
                 </label>
                 <select
@@ -218,15 +216,15 @@ export default function SiteVisitModal({
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #CBD5E1",
                     borderRadius: "var(--radius-md)",
-                    padding: "0.65rem 0.85rem",
+                    padding: "0.6rem 0.8rem",
                     color: "#0F172A",
-                    fontSize: "0.9rem",
+                    fontSize: "0.88rem",
                     outline: "none",
                     cursor: "pointer"
                   }}
                 >
                   <option value="Complete 4,500-Acre Wave City VIP Tour">
-                    ⭐ Full 4,500-Acre Wave City Township Comprehensive Tour
+                    ⭐ Full 4,500-Acre Wave City Comprehensive Tour
                   </option>
                   {allProperties.map((p) => (
                     <option key={p.id} value={p.title}>
@@ -236,70 +234,75 @@ export default function SiteVisitModal({
                 </select>
               </div>
 
-              {/* Date Presets */}
+              {/* Date Presets - Bootstrap Row */}
               <div>
-                <label style={{ display: "block", fontSize: "0.75rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.35rem" }}>
+                <label style={{ display: "block", fontSize: "0.72rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.3rem" }}>
                   Select Preferred Day
                 </label>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: "0.5rem" }}>
+                <div className="row g-2">
                   {["Tomorrow", "This Saturday", "This Sunday", "Next Weekday"].map((day) => (
-                    <button
-                      key={day}
-                      type="button"
-                      onClick={() => setVisitDate(day)}
-                      style={{
-                        backgroundColor: visitDate === day ? "#FEF3C7" : "#FFFFFF",
-                        border: visitDate === day ? "1px solid var(--gold-primary)" : "1px solid #E2E8F0",
-                        color: visitDate === day ? "#92400E" : "#475569",
-                        borderRadius: "var(--radius-md)",
-                        padding: "0.55rem 0.5rem",
-                        fontSize: "0.85rem",
-                        fontWeight: 600,
-                        cursor: "pointer"
-                      }}
-                    >
-                      {day}
-                    </button>
+                    <div key={day} className="col-6 col-sm-3">
+                      <button
+                        type="button"
+                        onClick={() => setVisitDate(day)}
+                        style={{
+                          width: "100%",
+                          backgroundColor: visitDate === day ? "#FEF3C7" : "#FFFFFF",
+                          border: visitDate === day ? "1px solid var(--gold-primary)" : "1px solid #E2E8F0",
+                          color: visitDate === day ? "#92400E" : "#475569",
+                          borderRadius: "var(--radius-md)",
+                          padding: "0.5rem 0.4rem",
+                          fontSize: "0.82rem",
+                          fontWeight: 600,
+                          cursor: "pointer"
+                        }}
+                      >
+                        {day}
+                      </button>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Time Slots */}
+              {/* Time Slots - Bootstrap Row */}
               <div>
-                <label style={{ display: "block", fontSize: "0.75rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.35rem" }}>
+                <label style={{ display: "block", fontSize: "0.72rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.3rem" }}>
                   Preferred Time Window
                 </label>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "0.5rem" }}>
+                <div className="row g-2">
                   {[
                     "Morning (10:30 AM - 12:30 PM)",
                     "Afternoon (2:00 PM - 4:00 PM)",
                     "Sunset Tour (4:30 PM - 6:30 PM)"
                   ].map((slot) => (
-                    <button
-                      key={slot}
-                      type="button"
-                      onClick={() => setTimeSlot(slot)}
-                      style={{
-                        backgroundColor: timeSlot === slot ? "#FEF3C7" : "#FFFFFF",
-                        border: timeSlot === slot ? "1px solid var(--gold-primary)" : "1px solid #E2E8F0",
-                        color: timeSlot === slot ? "#92400E" : "#475569",
-                        borderRadius: "var(--radius-md)",
-                        padding: "0.55rem 0.6rem",
-                        fontSize: "0.82rem",
-                        fontWeight: 600,
-                        cursor: "pointer"
-                      }}
-                    >
-                      {slot}
-                    </button>
+                    <div key={slot} className="col-12 col-sm-4">
+                      <button
+                        type="button"
+                        onClick={() => setTimeSlot(slot)}
+                        style={{
+                          width: "100%",
+                          backgroundColor: timeSlot === slot ? "#FEF3C7" : "#FFFFFF",
+                          border: timeSlot === slot ? "1px solid var(--gold-primary)" : "1px solid #E2E8F0",
+                          color: timeSlot === slot ? "#92400E" : "#475569",
+                          borderRadius: "var(--radius-md)",
+                          padding: "0.5rem 0.5rem",
+                          fontSize: "0.78rem",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          height: "100%"
+                        }}
+                      >
+                        {slot}
+                      </button>
+                    </div>
                   ))}
                 </div>
               </div>
 
               {/* Pickup Option */}
               <div>
-                <label style={{ display: "block", fontSize: "0.75rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.35rem" }}>
-                  Meeting Point & VIP Pickup Location
+                <label style={{ display: "block", fontSize: "0.72rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.3rem" }}>
+                  Meeting & Chauffeur Option
                 </label>
                 <select
                   value={pickupOption}
@@ -309,63 +312,52 @@ export default function SiteVisitModal({
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #CBD5E1",
                     borderRadius: "var(--radius-md)",
-                    padding: "0.65rem 0.85rem",
+                    padding: "0.6rem 0.8rem",
                     color: "#0F172A",
-                    fontSize: "0.9rem",
+                    fontSize: "0.88rem",
                     outline: "none",
                     cursor: "pointer"
                   }}
                 >
-                  <option value="wave_galleria">
-                    🏢 PropertyKraft Head Office (Wave Galleria SF-102, Sector 3)
-                  </option>
-                  <option value="noida_62">
-                    🚇 Noida Sector 62 / Electronic City Metro Pickup
-                  </option>
-                  <option value="vaishali">
-                    🚇 Vaishali Metro Station (Blue Line) Pickup
-                  </option>
-                  <option value="anand_vihar">
-                    🚄 Anand Vihar Namo Bharat / ISBT Hub Pickup
-                  </option>
-                  <option value="direct_site">
-                    🚗 Direct Self-Drive to Project Gate
-                  </option>
+                  <option value="wave_galleria">Direct Meeting at PropertyKraft Lounge (Wave Galleria SF-102)</option>
+                  <option value="noida_62">Complimentary Executive Pickup from Noida Electronic City Metro (Sec 62)</option>
+                  <option value="vaishali">Complimentary Executive Pickup from Vaishali Metro Station (Blue Line)</option>
+                  <option value="direct">Direct Site Location (Meet Specialist on-site)</option>
                 </select>
               </div>
 
               {/* Golf Cart Checkbox */}
               <div style={{
+                backgroundColor: "#F8FAFC",
+                border: "1px solid #E2E8F0",
+                padding: "0.75rem 0.85rem",
+                borderRadius: "var(--radius-md)",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.6rem",
-                backgroundColor: "#F8FAFC",
-                padding: "0.75rem",
-                borderRadius: "var(--radius-md)",
-                border: "1px solid #E2E8F0"
+                gap: "0.6rem"
               }}>
                 <input
                   type="checkbox"
-                  id="golf_cart"
+                  id="golfCartCheck"
                   checked={golfCartRequested}
                   onChange={(e) => setGolfCartRequested(e.target.checked)}
-                  style={{ width: "18px", height: "18px", accentColor: "var(--gold-primary)", cursor: "pointer" }}
+                  style={{ width: "16px", height: "16px", accentColor: "var(--gold-primary)", cursor: "pointer" }}
                 />
-                <label htmlFor="golf_cart" style={{ fontSize: "0.85rem", color: "#334155", cursor: "pointer", fontWeight: 500 }}>
-                  Include <strong>VIP Golf Cart Tour</strong> of Central Greens, Lake Parks, and Sector Clubhouses (Complimentary)
+                <label htmlFor="golfCartCheck" style={{ fontSize: "0.82rem", color: "#1E293B", cursor: "pointer", fontWeight: 600, margin: 0 }}>
+                  Request Electric Golf-Cart for internal sector touring (Veridia & Enclaves)
                 </label>
               </div>
 
-              {/* Contact Information */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.85rem" }}>
-                <div>
-                  <label style={{ display: "block", fontSize: "0.75rem", color: "#475569", fontWeight: 600, marginBottom: "0.3rem" }}>
-                    Your Name *
+              {/* Visitor Contact Info - Bootstrap Row */}
+              <div className="row g-2">
+                <div className="col-12 col-sm-6">
+                  <label style={{ display: "block", fontSize: "0.72rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.25rem" }}>
+                    Your Full Name *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Dr. Sameer"
+                    placeholder="e.g. Dr. Rajesh Sharma"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     style={{
@@ -373,24 +365,22 @@ export default function SiteVisitModal({
                       backgroundColor: "#FFFFFF",
                       border: "1px solid #CBD5E1",
                       borderRadius: "var(--radius-md)",
-                      padding: "0.65rem 0.85rem",
+                      padding: "0.6rem 0.8rem",
                       color: "#0F172A",
-                      fontSize: "0.9rem",
+                      fontSize: "0.88rem",
                       outline: "none"
                     }}
-                    onFocus={(e) => e.target.style.borderColor = "var(--gold-primary)"}
-                    onBlur={(e) => e.target.style.borderColor = "#CBD5E1"}
                   />
                 </div>
 
-                <div>
-                  <label style={{ display: "block", fontSize: "0.75rem", color: "#475569", fontWeight: 600, marginBottom: "0.3rem" }}>
-                    Mobile Number *
+                <div className="col-12 col-sm-6">
+                  <label style={{ display: "block", fontSize: "0.72rem", color: "#334155", fontWeight: 700, textTransform: "uppercase", marginBottom: "0.25rem" }}>
+                    Mobile Number (WhatsApp) *
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 98765 43210"
+                    placeholder="e.g. 98110 XXXXX"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     style={{
@@ -398,26 +388,35 @@ export default function SiteVisitModal({
                       backgroundColor: "#FFFFFF",
                       border: "1px solid #CBD5E1",
                       borderRadius: "var(--radius-md)",
-                      padding: "0.65rem 0.85rem",
+                      padding: "0.6rem 0.8rem",
                       color: "#0F172A",
-                      fontSize: "0.9rem",
+                      fontSize: "0.88rem",
                       outline: "none"
                     }}
-                    onFocus={(e) => e.target.style.borderColor = "var(--gold-primary)"}
-                    onBlur={(e) => e.target.style.borderColor = "#CBD5E1"}
                   />
                 </div>
               </div>
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-gold"
-                style={{ width: "100%", justifyContent: "center", padding: "0.85rem", marginTop: "0.5rem" }}
+                className="btn-gold w-100"
+                style={{ padding: "0.75rem", fontSize: "0.92rem", justifyContent: "center" }}
               >
-                <Calendar size={18} />
-                <span>{isSubmitting ? "Locking Concierge Slot..." : "Confirm Guided VIP Site Visit (0% Brokerage)"}</span>
+                {isSubmitting ? (
+                  <span>Generating VIP Pass...</span>
+                ) : (
+                  <>
+                    <Calendar size={16} />
+                    <span>Confirm VIP Site Visit Reservation</span>
+                  </>
+                )}
               </button>
+
+              <div style={{ textAlign: "center", fontSize: "0.72rem", color: "#64748B" }}>
+                🔒 100% Privacy. Zero spam. Official direct channel partner advisory.
+              </div>
             </form>
           )}
         </div>

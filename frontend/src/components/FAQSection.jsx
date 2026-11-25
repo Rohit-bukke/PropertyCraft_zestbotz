@@ -8,12 +8,12 @@ export default function FAQSection({ faqs = [], onOpenSiteVisit }) {
 
   return (
     <section style={{
-      padding: "5rem 0",
+      padding: "3.5rem 0",
       backgroundColor: "#F8FAFC",
       borderBottom: "1px solid #E2E8F0"
     }}>
       <div className="container-custom">
-        <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 3.5rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 2.5rem" }}>
           <div style={{
             display: "inline-flex",
             alignItems: "center",
@@ -23,27 +23,27 @@ export default function FAQSection({ faqs = [], onOpenSiteVisit }) {
             fontWeight: 700,
             textTransform: "uppercase",
             letterSpacing: "0.1em",
-            marginBottom: "0.45rem"
+            marginBottom: "0.35rem"
           }}>
             <HelpCircle size={15} />
             Frequently Addressed Queries
           </div>
           <h2 style={{
             fontFamily: "var(--font-serif)",
-            fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+            fontSize: "clamp(1.85rem, 3.5vw, 2.75rem)",
             color: "#0F172A",
-            marginBottom: "0.85rem",
+            marginBottom: "0.75rem",
             letterSpacing: "-0.015em"
           }}>
             Wave City & NH-24 <span style={{ color: "var(--gold-primary)" }}>Investor Guide</span>
           </h2>
-          <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.6 }}>
+          <p style={{ color: "#64748B", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
             Clear, authoritative answers regarding RERA approvals, freehold land titles, bank mortgages, and smart infrastructure.
           </p>
         </div>
 
-        {/* Accordion Container - Clean Light Styling */}
-        <div style={{ maxWidth: "860px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+        {/* Accordion Container */}
+        <div style={{ maxWidth: "860px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
 
@@ -63,25 +63,25 @@ export default function FAQSection({ faqs = [], onOpenSiteVisit }) {
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                   style={{
                     width: "100%",
-                    padding: "1.25rem 1.5rem",
+                    padding: "1.1rem 1.25rem",
                     background: isOpen ? "#FFFDF7" : "#FFFFFF",
                     border: "none",
                     textAlign: "left",
                     color: "#0F172A",
-                    fontSize: "1rem",
+                    fontSize: "0.95rem",
                     fontWeight: 700,
                     cursor: "pointer",
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    gap: "1rem"
+                    gap: "0.75rem"
                   }}
                 >
                   <span style={{ color: isOpen ? "var(--gold-primary)" : "#0F172A" }}>
                     {faq.question}
                   </span>
                   <ChevronDown
-                    size={20}
+                    size={18}
                     color={isOpen ? "var(--gold-primary)" : "#64748B"}
                     style={{
                       transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
@@ -93,10 +93,10 @@ export default function FAQSection({ faqs = [], onOpenSiteVisit }) {
 
                 {isOpen && (
                   <div style={{
-                    padding: "0 1.5rem 1.25rem",
+                    padding: "0 1.25rem 1.1rem",
                     backgroundColor: "#FFFDF7",
                     color: "#475569",
-                    fontSize: "0.92rem",
+                    fontSize: "0.88rem",
                     lineHeight: 1.65,
                     borderTop: "1px solid #FBF4DE"
                   }}>
@@ -109,15 +109,15 @@ export default function FAQSection({ faqs = [], onOpenSiteVisit }) {
         </div>
 
         {/* Still Have Questions CTA */}
-        <div style={{ textAlign: "center", marginTop: "3rem" }}>
-          <p style={{ color: "#64748B", fontSize: "0.95rem", marginBottom: "1rem" }}>
+        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <p style={{ color: "#64748B", fontSize: "0.92rem", marginBottom: "0.85rem" }}>
             Have a specific plot layout query or need custom financial guidance?
           </p>
           <a
             href="https://wa.me/919212224545?text=Hello%20PropertyKraft,%20I%20have%20a%20question%20regarding%20Wave%20City%20properties."
             target="_blank"
             rel="noreferrer"
-            className="btn-gold"
+            className="btn-gold w-mobile-100"
             style={{ textDecoration: "none" }}
           >
             <MessageSquare size={16} />

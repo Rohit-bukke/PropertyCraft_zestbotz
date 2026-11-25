@@ -65,36 +65,39 @@ export default function ComparisonDrawer({
           top: 0,
           zIndex: 10,
           backgroundColor: "#FFFFFF",
-          padding: "1.25rem 2rem",
+          padding: "1rem 1.25rem",
           borderBottom: "1px solid #E2E8F0",
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center"
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "0.5rem"
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
             <div style={{
-              width: "38px",
-              height: "38px",
-              borderRadius: "10px",
+              width: "34px",
+              height: "34px",
+              borderRadius: "8px",
               background: "#FEF3C7",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#B45309"
+              color: "#B45309",
+              flexShrink: 0
             }}>
-              <Scale size={20} />
+              <Scale size={18} />
             </div>
             <div>
-              <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.3rem", color: "#0F172A" }}>
+              <h2 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "clamp(1.1rem, 2.5vw, 1.3rem)", color: "#0F172A", margin: 0 }}>
                 Side-by-Side Property Comparison
               </h2>
-              <p style={{ fontSize: "0.82rem", color: "#64748B" }}>
+              <p style={{ fontSize: "0.78rem", color: "#64748B", margin: 0 }}>
                 Analyzing {selectedProperties.length} of 3 properties in Wave City
               </p>
             </div>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.85rem" }}>
             {selectedProperties.length > 0 && (
               <button
                 onClick={onClearAll}
@@ -102,7 +105,7 @@ export default function ComparisonDrawer({
                   background: "none",
                   border: "none",
                   color: "#64748B",
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   cursor: "pointer",
                   textDecoration: "underline",
                   fontWeight: 600
@@ -113,12 +116,13 @@ export default function ComparisonDrawer({
             )}
             <button
               onClick={onClose}
+              aria-label="Close comparison"
               style={{
                 backgroundColor: "#F1F5F9",
                 border: "1px solid #E2E8F0",
                 borderRadius: "50%",
-                width: "36px",
-                height: "36px",
+                width: "34px",
+                height: "34px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -129,13 +133,13 @@ export default function ComparisonDrawer({
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#E2E8F0"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#F1F5F9"}
             >
-              <X size={18} />
+              <X size={17} />
             </button>
           </div>
         </div>
 
         {/* Content Body */}
-        <div style={{ padding: "2rem", overflowX: "auto", backgroundColor: "#FFFFFF" }}>
+        <div style={{ padding: "1.25rem 1rem", overflowX: "auto", WebkitOverflowScrolling: "touch", backgroundColor: "#FFFFFF" }}>
           {selectedProperties.length === 0 ? (
             <div style={{ textAlign: "center", padding: "3rem" }}>
               <Scale size={42} color="var(--gold-primary)" style={{ margin: "0 auto 1rem", opacity: 0.6 }} />

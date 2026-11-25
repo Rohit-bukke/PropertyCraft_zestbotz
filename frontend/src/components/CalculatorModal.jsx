@@ -32,7 +32,7 @@ export default function CalculatorModal({
   // ROI Calculator States
   const [roiPurchasePrice, setRoiPurchasePrice] = useState(initialPrice);
   const [monthlyRent, setMonthlyRent] = useState(Math.round((initialPrice * 0.0035) / 1000) * 1000 || 35000);
-  const [annualGrowthRate, setAnnualGrowthRate] = useState(11.5); // Historical Wave City / DME CAGR
+  const [annualGrowthRate, setAnnualGrowthRate] = useState(11.5);
   const [holdingPeriod, setHoldingPeriod] = useState(5);
 
   // Calculate EMI dynamically
@@ -43,7 +43,7 @@ export default function CalculatorModal({
     const totalMonths = tenureYears * 12;
 
     if (loanAmount <= 0 || monthlyRate <= 0) {
-      return { monthlyEmi: 0, totalInterest: 0, totalPayable: loanAmount, loanAmount, downPayment };
+      return { monthlyEmi: 0, totalInterest: 0, totalPayable: loanAmount, loanAmount, downPayment, principalShare: 50, interestShare: 50 };
     }
 
     const factor = Math.pow(1 + monthlyRate, totalMonths);
@@ -68,7 +68,6 @@ export default function CalculatorModal({
     const projectedValue = Math.round(roiPurchasePrice * Math.pow(1 + rate, holdingPeriod));
     const capitalAppreciation = projectedValue - roiPurchasePrice;
 
-    // Cumulative rental income with 5% annual escalation
     let totalRental = 0;
     let currentRent = monthlyRent;
     for (let y = 0; y < holdingPeriod; y++) {
@@ -100,7 +99,7 @@ export default function CalculatorModal({
   return (
     <div className="modal-overlay">
       <div 
-        className="animate-fade-in"
+        className="animate-fade-in modal-dialog-responsive"
         style={{
           width: "100%",
           maxWidth: "760px",
@@ -112,9 +111,9 @@ export default function CalculatorModal({
           border: "1px solid #E2E8F0"
         }}
       >
-        {/* Header - Clean White */}
+        {/* Header */}
         <div style={{
-          padding: "1.5rem 1.75rem",
+          padding: "1.25rem 1.5rem",
           borderBottom: "1px solid #E2E8F0",
           display: "flex",
           justifyContent: "space-between",
@@ -122,23 +121,24 @@ export default function CalculatorModal({
           backgroundColor: "#FFFFFF"
         }}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--gold-primary)", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase" }}>
-              <Calculator size={15} />
+            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", color: "var(--gold-primary)", fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase" }}>
+              <Calculator size={14} />
               PropTech Financial Suite
             </div>
-            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.35rem", color: "#0F172A", marginTop: "0.2rem" }}>
+            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "clamp(1.15rem, 2.5vw, 1.35rem)", color: "#0F172A", marginTop: "0.2rem", margin: 0 }}>
               {propertyTitle ? `${propertyTitle} Financial Planner` : "Wave City Investment & EMI Suite"}
             </h3>
           </div>
 
           <button
             onClick={onClose}
+            aria-label="Close calculator"
             style={{
               backgroundColor: "#F1F5F9",
               border: "1px solid #E2E8F0",
               borderRadius: "50%",
-              width: "36px",
-              height: "36px",
+              width: "34px",
+              height: "34px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -146,37 +146,32 @@ export default function CalculatorModal({
               cursor: "pointer",
               transition: "background-color 0.2s"
             }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#E2E8F0"}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#F1F5F9"}
           >
-            <X size={18} />
+            <X size={17} />
           </button>
         </div>
 
-        {/* Tab Switcher - Light */}
-        <div style={{
-          display: "flex",
-          padding: "0.75rem 1.75rem 0",
-          borderBottom: "1px solid #E2E8F0",
-          gap: "1.5rem"
-        }}>
+        {/* Tab Switcher (Scrollable on small devices) */}
+        <div className="d-flex overflow-auto flex-nowrap border-bottom px-3 px-md-4 gap-3 gap-md-4" style={{ scrollbarWidth: "none" }}>
           <button
             onClick={() => setActiveTab("emi")}
             style={{
               background: "none",
               border: "none",
-              paddingBottom: "0.75rem",
+              padding: "0.75rem 0",
               borderBottom: activeTab === "emi" ? "2px solid var(--gold-primary)" : "2px solid transparent",
               color: activeTab === "emi" ? "#0F172A" : "#64748B",
               fontWeight: 700,
-              fontSize: "0.95rem",
+              fontSize: "0.9rem",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              gap: "0.45rem"
+              gap: "0.4rem",
+              whiteSpace: "nowrap",
+              flexShrink: 0
             }}
           >
-            <Calculator size={16} color={activeTab === "emi" ? "var(--gold-primary)" : "#64748B"} />
+            <Calculator size={15} color={activeTab === "emi" ? "var(--gold-primary)" : "#64748B"} />
             Home Loan EMI Calculator
           </button>
 
@@ -185,34 +180,36 @@ export default function CalculatorModal({
             style={{
               background: "none",
               border: "none",
-              paddingBottom: "0.75rem",
+              padding: "0.75rem 0",
               borderBottom: activeTab === "roi" ? "2px solid var(--gold-primary)" : "2px solid transparent",
               color: activeTab === "roi" ? "#0F172A" : "#64748B",
               fontWeight: 700,
-              fontSize: "0.95rem",
+              fontSize: "0.9rem",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              gap: "0.45rem"
+              gap: "0.4rem",
+              whiteSpace: "nowrap",
+              flexShrink: 0
             }}
           >
-            <TrendingUp size={16} color={activeTab === "roi" ? "var(--gold-primary)" : "#64748B"} />
-            Wave City ROI & Appreciation Simulator
+            <TrendingUp size={15} color={activeTab === "roi" ? "var(--gold-primary)" : "#64748B"} />
+            Wave City ROI & Appreciation
           </button>
         </div>
 
-        {/* Tab Content */}
-        <div style={{ padding: "1.75rem", backgroundColor: "#FFFFFF" }}>
+        {/* Tab Content Body - Bootstrap Row */}
+        <div style={{ padding: "1.25rem", backgroundColor: "#FFFFFF" }}>
           {activeTab === "emi" ? (
             /* ============= EMI CALCULATOR ============= */
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
+            <div className="row g-4">
               {/* Controls Column */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "1.35rem" }}>
+              <div className="col-12 col-md-6 d-flex flex-column gap-3">
                 {/* Property Price Slider */}
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Property Cost</span>
-                    <span style={{ fontSize: "0.95rem", color: "#0F172A", fontWeight: 800 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Property Cost</span>
+                    <span style={{ fontSize: "0.92rem", color: "#0F172A", fontWeight: 800 }}>
                       {formatINR(propertyPrice)}
                     </span>
                   </div>
@@ -224,7 +221,7 @@ export default function CalculatorModal({
                     value={propertyPrice}
                     onChange={(e) => setPropertyPrice(Number(e.target.value))}
                   />
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "#64748B", marginTop: "4px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
                     <span>₹25 Lakh</span>
                     <span>₹4.5 Crore</span>
                   </div>
@@ -232,9 +229,9 @@ export default function CalculatorModal({
 
                 {/* Down Payment % Slider */}
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Down Payment ({downPaymentPct}%)</span>
-                    <span style={{ fontSize: "0.9rem", color: "#0F172A", fontWeight: 700 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Down Payment ({downPaymentPct}%)</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
                       {formatINR(emiCalculations.downPayment)}
                     </span>
                   </div>
@@ -246,7 +243,7 @@ export default function CalculatorModal({
                     value={downPaymentPct}
                     onChange={(e) => setDownPaymentPct(Number(e.target.value))}
                   />
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "#64748B", marginTop: "4px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
                     <span>10% (Min)</span>
                     <span>50%</span>
                   </div>
@@ -254,9 +251,9 @@ export default function CalculatorModal({
 
                 {/* Interest Rate */}
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Interest Rate</span>
-                    <span style={{ fontSize: "0.9rem", color: "#0F172A", fontWeight: 700 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Interest Rate</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
                       {interestRate}% p.a.
                     </span>
                   </div>
@@ -268,17 +265,17 @@ export default function CalculatorModal({
                     value={interestRate}
                     onChange={(e) => setInterestRate(Number(e.target.value))}
                   />
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "#64748B", marginTop: "4px" }}>
-                    <span>7.0% (Prime SBI/HDFC)</span>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
+                    <span>7.0% (Prime)</span>
                     <span>12.0%</span>
                   </div>
                 </div>
 
                 {/* Loan Tenure */}
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Loan Tenure</span>
-                    <span style={{ fontSize: "0.9rem", color: "#0F172A", fontWeight: 700 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Loan Tenure</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
                       {tenureYears} Years ({tenureYears * 12} Mos)
                     </span>
                   </div>
@@ -290,110 +287,117 @@ export default function CalculatorModal({
                     value={tenureYears}
                     onChange={(e) => setTenureYears(Number(e.target.value))}
                   />
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "#64748B", marginTop: "4px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
                     <span>5 Years</span>
                     <span>30 Years</span>
                   </div>
                 </div>
               </div>
 
-              {/* Live Output Card - Clean Light Styling */}
-              <div style={{
-                padding: "1.75rem",
-                borderRadius: "var(--radius-lg)",
-                backgroundColor: "#F8FAFC",
-                border: "1px solid #E2E8F0",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
-              }}>
-                <div>
-                  <div style={{ fontSize: "0.8rem", color: "var(--gold-primary)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                    Estimated Monthly Repayment
-                  </div>
-                  <div style={{
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "2.4rem",
-                    fontWeight: 800,
-                    color: "#0F172A",
-                    margin: "0.4rem 0 1.25rem",
-                    letterSpacing: "-0.02em"
-                  }}>
-                    {formatINR(emiCalculations.monthlyEmi)}
-                    <span style={{ fontSize: "0.95rem", color: "#64748B", fontWeight: 500 }}> / month</span>
+              {/* Live Output Card */}
+              <div className="col-12 col-md-6">
+                <div style={{
+                  padding: "1.25rem",
+                  borderRadius: "var(--radius-lg)",
+                  backgroundColor: "#F8FAFC",
+                  border: "1px solid #E2E8F0",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  height: "100%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
+                }}>
+                  <div>
+                    <div style={{ fontSize: "0.76rem", color: "var(--gold-primary)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                      Estimated Monthly Repayment
+                    </div>
+                    <div style={{
+                      fontFamily: "var(--font-sans)",
+                      fontSize: "clamp(1.8rem, 4vw, 2.3rem)",
+                      fontWeight: 800,
+                      color: "#0F172A",
+                      margin: "0.35rem 0 1rem",
+                      letterSpacing: "-0.02em"
+                    }}>
+                      {formatINR(emiCalculations.monthlyEmi)}
+                      <span style={{ fontSize: "0.85rem", color: "#64748B", fontWeight: 500 }}> / mo</span>
+                    </div>
+
+                    {/* Visual Proportion Bar */}
+                    <div style={{ marginBottom: "1rem" }}>
+                      <div style={{ height: "8px", borderRadius: "4px", backgroundColor: "#E2E8F0", display: "flex", overflow: "hidden" }}>
+                        <div style={{ width: `${emiCalculations.principalShare}%`, backgroundColor: "var(--gold-primary)" }} title="Principal" />
+                        <div style={{ width: `${emiCalculations.interestShare}%`, backgroundColor: "#94A3B8" }} title="Interest" />
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", marginTop: "0.35rem", fontWeight: 600 }}>
+                        <span style={{ color: "var(--gold-primary)" }}>● Principal ({emiCalculations.principalShare}%)</span>
+                        <span style={{ color: "#64748B" }}>● Interest ({emiCalculations.interestShare}%)</span>
+                      </div>
+                    </div>
+
+                    {/* Summary Rows */}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontSize: "0.82rem" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
+                        <span>Principal Loan Amount:</span>
+                        <strong style={{ color: "#0F172A" }}>{formatINR(emiCalculations.loanAmount)}</strong>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
+                        <span>Total Interest Payable:</span>
+                        <strong style={{ color: "var(--gold-primary)" }}>{formatINR(emiCalculations.totalInterest)}</strong>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", color: "#475569", borderTop: "1px solid #E2E8F0", paddingTop: "0.5rem" }}>
+                        <span>Total Amount Payable:</span>
+                        <strong style={{ color: "#0F172A" }}>{formatINR(emiCalculations.totalPayable)}</strong>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Visual Proportion Bar */}
-                  <div style={{ marginBottom: "1.25rem" }}>
-                    <div style={{ height: "8px", borderRadius: "4px", backgroundColor: "#E2E8F0", display: "flex", overflow: "hidden" }}>
-                      <div style={{ width: `${emiCalculations.principalShare}%`, backgroundColor: "var(--gold-primary)" }} title="Principal" />
-                      <div style={{ width: `${emiCalculations.interestShare}%`, backgroundColor: "#94A3B8" }} title="Interest" />
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem", marginTop: "0.35rem", fontWeight: 600 }}>
-                      <span style={{ color: "var(--gold-primary)" }}>● Principal ({emiCalculations.principalShare}%)</span>
-                      <span style={{ color: "#64748B" }}>● Interest ({emiCalculations.interestShare}%)</span>
-                    </div>
+                  <div style={{ marginTop: "1.25rem" }}>
+                    <button
+                      onClick={() => {
+                        onClose();
+                        onOpenSiteVisit(propertyTitle ? { title: propertyTitle } : null);
+                      }}
+                      className="btn-gold w-100"
+                      style={{ justifyContent: "center", fontSize: "0.85rem", padding: "0.65rem" }}
+                    >
+                      <Calendar size={15} />
+                      Apply for Pre-Approved Loan
+                    </button>
                   </div>
-
-                  {/* Summary Rows */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", fontSize: "0.85rem" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
-                      <span>Principal Loan Amount:</span>
-                      <strong style={{ color: "#0F172A" }}>{formatINR(emiCalculations.loanAmount)}</strong>
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
-                      <span>Total Interest Payable:</span>
-                      <strong style={{ color: "var(--gold-primary)" }}>{formatINR(emiCalculations.totalInterest)}</strong>
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", color: "#475569", borderTop: "1px solid #E2E8F0", paddingTop: "0.6rem" }}>
-                      <span>Total Amount Payable:</span>
-                      <strong style={{ color: "#0F172A" }}>{formatINR(emiCalculations.totalPayable)}</strong>
-                    </div>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: "1.5rem" }}>
-                  <button
-                    onClick={() => {
-                      onClose();
-                      onOpenSiteVisit(propertyTitle ? { title: propertyTitle } : null);
-                    }}
-                    className="btn-gold"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    <Calendar size={16} />
-                    Apply with Pre-Approved Bank Loan
-                  </button>
                 </div>
               </div>
             </div>
           ) : (
             /* ============= ROI SIMULATOR ============= */
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
+            <div className="row g-4">
               {/* Controls */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "1.35rem" }}>
+              <div className="col-12 col-md-6 d-flex flex-column gap-3">
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Initial Purchase Price</span>
-                    <span style={{ fontSize: "0.95rem", color: "#0F172A", fontWeight: 800 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Initial Purchase Price</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
                       {formatINR(roiPurchasePrice)}
                     </span>
                   </div>
                   <input
                     type="range"
                     min="3000000"
-                    max="40000000"
+                    max="45000000"
                     step="500000"
                     value={roiPurchasePrice}
                     onChange={(e) => setRoiPurchasePrice(Number(e.target.value))}
                   />
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
+                    <span>₹30 Lakh</span>
+                    <span>₹4.5 Crore</span>
+                  </div>
                 </div>
 
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Expected Monthly Rental</span>
-                    <span style={{ fontSize: "0.9rem", color: "#0F172A", fontWeight: 700 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Expected Monthly Rental</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
                       {formatINR(monthlyRent)}
                     </span>
                   </div>
@@ -405,112 +409,126 @@ export default function CalculatorModal({
                     value={monthlyRent}
                     onChange={(e) => setMonthlyRent(Number(e.target.value))}
                   />
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
+                    <span>₹15,000</span>
+                    <span>₹1.5 Lakh</span>
+                  </div>
                 </div>
 
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Projected Annual Appreciation</span>
-                    <span style={{ fontSize: "0.9rem", color: "var(--gold-primary)", fontWeight: 800 }}>
-                      {annualGrowthRate}% p.a.
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Annual Capital Appreciation</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
+                      {annualGrowthRate}% CAGR
                     </span>
                   </div>
                   <input
                     type="range"
-                    min="8.0"
+                    min="6.0"
                     max="18.0"
                     step="0.5"
                     value={annualGrowthRate}
                     onChange={(e) => setAnnualGrowthRate(Number(e.target.value))}
                   />
-                  <div style={{ fontSize: "0.75rem", color: "#64748B", marginTop: "4px" }}>
-                    *Wave City / DME corridor has historically compounded at 11.2% - 14.5% p.a.
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
+                    <span>6% (Conservative)</span>
+                    <span>18% (High Growth DME)</span>
                   </div>
                 </div>
 
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                    <span style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 600 }}>Holding Horizon</span>
-                    <span style={{ fontSize: "0.9rem", color: "#0F172A", fontWeight: 700 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+                    <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 600 }}>Investment Horizon</span>
+                    <span style={{ fontSize: "0.88rem", color: "#0F172A", fontWeight: 700 }}>
                       {holdingPeriod} Years
                     </span>
                   </div>
                   <input
                     type="range"
                     min="3"
-                    max="10"
+                    max="15"
                     step="1"
                     value={holdingPeriod}
                     onChange={(e) => setHoldingPeriod(Number(e.target.value))}
                   />
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#64748B", marginTop: "4px" }}>
+                    <span>3 Years</span>
+                    <span>15 Years</span>
+                  </div>
                 </div>
               </div>
 
-              {/* ROI Output - Light Surface */}
-              <div style={{
-                padding: "1.75rem",
-                borderRadius: "var(--radius-lg)",
-                backgroundColor: "#F8FAFC",
-                border: "1px solid #E2E8F0",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
-              }}>
-                <div>
-                  <div style={{ fontSize: "0.8rem", color: "var(--gold-primary)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                    Projected Property Worth (In {holdingPeriod} Yrs)
-                  </div>
-                  <div style={{
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "2.3rem",
-                    fontWeight: 800,
-                    color: "#0F172A",
-                    margin: "0.4rem 0 1.25rem",
-                    letterSpacing: "-0.02em"
-                  }}>
-                    {formatINR(roiCalculations.projectedValue)}
-                  </div>
+              {/* ROI Output Card */}
+              <div className="col-12 col-md-6">
+                <div style={{
+                  padding: "1.25rem",
+                  borderRadius: "var(--radius-lg)",
+                  backgroundColor: "#F8FAFC",
+                  border: "1px solid #E2E8F0",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  height: "100%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
+                }}>
+                  <div>
+                    <div style={{ fontSize: "0.76rem", color: "#16A34A", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                      Estimated Portfolio Value in {holdingPeriod} Years
+                    </div>
+                    <div style={{
+                      fontFamily: "var(--font-sans)",
+                      fontSize: "clamp(1.8rem, 4vw, 2.3rem)",
+                      fontWeight: 800,
+                      color: "#0F172A",
+                      margin: "0.35rem 0 1rem",
+                      letterSpacing: "-0.02em"
+                    }}>
+                      {formatINR(roiCalculations.projectedValue)}
+                    </div>
 
-                  <div style={{
-                    backgroundColor: "#DCFCE7",
-                    border: "1px solid #BBF7D0",
-                    borderRadius: "var(--radius-md)",
-                    padding: "0.85rem 1rem",
-                    marginBottom: "1.25rem"
-                  }}>
-                    <div style={{ fontSize: "0.8rem", color: "#166534", fontWeight: 600 }}>Estimated Net Gain (Capital + Rent):</div>
-                    <div style={{ fontSize: "1.35rem", fontWeight: 800, color: "#15803D" }}>
-                      +{formatINR(roiCalculations.netProfit)}
-                      <span style={{ fontSize: "0.85rem", color: "#166534", marginLeft: "0.5rem" }}>
-                        ({roiCalculations.totalRoiPct}% Total ROI)
-                      </span>
+                    <div style={{
+                      backgroundColor: "#DCFCE7",
+                      padding: "0.6rem 0.85rem",
+                      borderRadius: "var(--radius-md)",
+                      marginBottom: "1rem",
+                      border: "1px solid #86EFAC",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center"
+                    }}>
+                      <span style={{ color: "#166534", fontSize: "0.82rem", fontWeight: 600 }}>Total Net Returns:</span>
+                      <strong style={{ color: "#14532D", fontSize: "1.1rem", fontWeight: 800 }}>+{roiCalculations.totalRoiPct}%</strong>
+                    </div>
+
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontSize: "0.82rem" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
+                        <span>Capital Appreciation:</span>
+                        <strong style={{ color: "#0F172A" }}>+{formatINR(roiCalculations.capitalAppreciation)}</strong>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
+                        <span>Cumulative Rental Gain:</span>
+                        <strong style={{ color: "var(--gold-primary)" }}>+{formatINR(roiCalculations.totalRental)}</strong>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", color: "#475569", borderTop: "1px solid #E2E8F0", paddingTop: "0.5rem" }}>
+                        <span>Net Profit Created:</span>
+                        <strong style={{ color: "#15803D" }}>+{formatINR(roiCalculations.netProfit)}</strong>
+                      </div>
                     </div>
                   </div>
 
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem", fontSize: "0.85rem" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
-                      <span>Pure Capital Appreciation:</span>
-                      <strong style={{ color: "#0F172A" }}>+{formatINR(roiCalculations.capitalAppreciation)}</strong>
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", color: "#475569" }}>
-                      <span>Total Cumulative Rent Earned:</span>
-                      <strong style={{ color: "#0F172A" }}>+{formatINR(roiCalculations.totalRental)}</strong>
-                    </div>
+                  <div style={{ marginTop: "1.25rem" }}>
+                    <button
+                      onClick={() => {
+                        onClose();
+                        onOpenSiteVisit(propertyTitle ? { title: propertyTitle } : null);
+                      }}
+                      className="btn-gold w-100"
+                      style={{ justifyContent: "center", fontSize: "0.85rem", padding: "0.65rem" }}
+                    >
+                      <Sparkles size={15} />
+                      Consult Wealth Strategist
+                    </button>
                   </div>
-                </div>
-
-                <div style={{ marginTop: "1.5rem" }}>
-                  <button
-                    onClick={() => {
-                      onClose();
-                      onOpenSiteVisit(propertyTitle ? { title: propertyTitle } : null);
-                    }}
-                    className="btn-gold"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    <span>Request Verified Investment Deck</span>
-                    <ArrowRight size={16} />
-                  </button>
                 </div>
               </div>
             </div>

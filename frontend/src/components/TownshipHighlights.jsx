@@ -1,63 +1,62 @@
 import React, { useState } from "react";
 import { 
-  Building2, 
   Cpu, 
   Droplet, 
   Zap, 
-  ShieldCheck, 
-  Trees, 
   Car, 
-  MapPin, 
+  Trees, 
+  ShieldCheck, 
+  ArrowRight,
   Sparkles,
-  ArrowRight
+  MapPin
 } from "lucide-react";
 
 export default function TownshipHighlights({ onOpenSiteVisit }) {
   const [activeSector, setActiveSector] = useState("oakwood");
 
-  const sectorData = {
+  const sectors = {
     oakwood: {
-      title: "Oakwood Enclave (Sectors 2 & 3)",
-      tagline: "The Pinnacle of Ultra-Luxury Living",
-      description: "Home to Wave Veridia and premium freehold villa plots. Flanked by the lavish 30,000 sq.ft. Oakwood Clubhouse and Olympic swimming pool, this sector offers lush central lake views and the lowest population density in Delhi-NCR.",
-      highlights: ["Wave Veridia 4 & 5 BHK Skyvillas", "30,000 Sq.Ft Club", "Facing 50-Acre Forest Greens", "Palafox Spanish Architecture"],
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      title: "Oakwood Enclave & Veridia",
+      tagline: "Signature Ultra-Luxury Living",
+      description: "Home to Wave Veridia and premium bespoke plots. Features an Olympic-sized swimming pool, dedicated banquet greens, and the prestigious 30,000 sq.ft. Oakwood Clubhouse.",
+      highlights: ["30,000 sq.ft. Club Oakwood", "Broad 45-Meter Boulevards", "Adjacent to Central Lake Park", "Underground Gas & Fiber"],
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
     },
     greenwood: {
-      title: "Greenwood Enclave (Sector 4)",
-      tagline: "Smart Mid-Rise Park Residences",
-      description: "Nestled right along Wave City's central boulevard, Greenwood Enclave houses Wave Eligo smart residences with 80% open landscape gardens, integrated cycling tracks, and semi-modular digital homes.",
-      highlights: ["Wave Eligo Smart Homes", "80% Open Green Canopy", "Infinity Splash Pool", "Direct Park Walkways"],
+      title: "Greenwood Enclave & Eligo",
+      tagline: "Mid-Rise Smart Living & Green Corridors",
+      description: "Surrounded by 50+ acres of continuous thematic park systems. Home to Wave Eligo and high-efficiency smart 3 BHK apartments with 7-ft deep balconies.",
+      highlights: ["50+ Acres Green Parks", "Biometric Building Access", "Dedicated EV Bays", "Zero Carbon Footprint"],
       image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
     },
     galleria: {
-      title: "Wave Galleria Hub (Sector 3)",
-      tagline: "Lifestyle, High-Street Retail & Corporate Suites",
-      description: "The bustling commercial and lifestyle nerve center of the township. Features 5 levels of high-street retail, anchor stores, banks, pharmacies, multi-cuisine food courts, and corporate office suites including the PropertyKraft Advisory Headquarters (SF-102).",
-      highlights: ["PropertyKraft Flagship Office SF-102", "500+ Car Basement Parking", "Operational Supermarkets & F&B", "7.6% Commercial Yields"],
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      title: "Wave Galleria & Commercial District",
+      tagline: "Retail, High-Street Banking & Dining Hub",
+      description: "The primary commercial nucleus of Wave City housing banks, gourmet retail, medical centers, and the official PropertyKraft client advisory lounge at SF-102.",
+      highlights: ["High Street Retail Suites", "24/7 ATM & Banking Spine", "Multi-Level Parking", "PropertyKraft Advisory SF-102"],
+      image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80"
     },
     kingwood: {
       title: "Kingwood & Palmwood Enclaves",
-      tagline: "Independent Living & Freehold Plots",
-      description: "A serene residential enclave characterized by low-rise independent floors (G+2) and wide villa plots. Popular for families who appreciate independent living with private terraces, tree-lined avenues, and gated perimeter security.",
-      highlights: ["Wave Executive Independent Floors", "Freehold Plots (135 - 500 Sq. Yd.)", "Wide 60m Arterial Roads", "Immediate Registry"],
+      tagline: "Freehold Residential Villa Plots",
+      description: "Direct registry-ready residential plots ranging from 135 to 404 sq. yards. Immediate possession available with full municipal utility hookups.",
+      highlights: ["Immediate Registry & Mutation", "Gated Security Checkposts", "100% Underground Cables", "Wide Tree-Lined Roads"],
       image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
     }
   };
 
-  const currentSector = sectorData[activeSector];
+  const currentSector = sectors[activeSector];
 
   return (
     <section id="township-section" style={{
-      padding: "5rem 0",
+      padding: "3.5rem 0",
       backgroundColor: "#FFFFFF",
       borderBottom: "1px solid #E2E8F0",
       position: "relative"
     }}>
       <div className="container-custom">
         {/* Section Header */}
-        <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 3.5rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 2.5rem" }}>
           <div style={{
             display: "inline-flex",
             alignItems: "center",
@@ -67,143 +66,150 @@ export default function TownshipHighlights({ onOpenSiteVisit }) {
             fontWeight: 700,
             textTransform: "uppercase",
             letterSpacing: "0.1em",
-            marginBottom: "0.45rem"
+            marginBottom: "0.35rem"
           }}>
             <Sparkles size={15} />
             IGBC Platinum Pre-Certified Smart Township
           </div>
           <h2 style={{
             fontFamily: "var(--font-serif)",
-            fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
+            fontSize: "clamp(1.9rem, 3.5vw, 2.75rem)",
             color: "#0F172A",
-            marginBottom: "0.85rem",
+            marginBottom: "0.75rem",
             letterSpacing: "-0.015em"
           }}>
             Mastering <span style={{ color: "var(--gold-primary)" }}>4,500 Acres</span> of Urban Luxury
           </h2>
-          <p style={{ color: "#64748B", fontSize: "1rem", lineHeight: 1.6 }}>
+          <p style={{ color: "#64748B", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
             Located directly on the 14-lane signal-free Delhi-Meerut Expressway (NH-24), 
             Wave City represents Asia's largest self-contained hi-tech smart city.
           </p>
         </div>
 
-        {/* 4 Pillars of Wave City Infrastructure - Clean Light Cards */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-          gap: "1.5rem",
-          marginBottom: "3.5rem"
-        }}>
-          <div style={{
-            backgroundColor: "#F8FAFC",
-            border: "1px solid #E2E8F0",
-            padding: "1.5rem",
-            borderRadius: "var(--radius-lg)",
-            transition: "all 0.2s ease"
-          }}>
+        {/* 4 Pillars of Wave City Infrastructure - Bootstrap Grid */}
+        <div className="row g-3 g-lg-4 mb-4">
+          <div className="col-12 col-sm-6 col-lg-3">
             <div style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "10px",
-              backgroundColor: "#FEF3C7",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#B45309",
-              marginBottom: "1rem"
+              backgroundColor: "#F8FAFC",
+              border: "1px solid #E2E8F0",
+              padding: "1.25rem",
+              borderRadius: "var(--radius-lg)",
+              height: "100%",
+              transition: "all 0.2s ease"
             }}>
-              <Cpu size={22} />
+              <div style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "10px",
+                backgroundColor: "#FEF3C7",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#B45309",
+                marginBottom: "0.85rem"
+              }}>
+                <Cpu size={20} />
+              </div>
+              <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "#0F172A", marginBottom: "0.35rem" }}>
+                Central Command Center
+              </h4>
+              <p style={{ fontSize: "0.82rem", color: "#64748B", lineHeight: 1.5, margin: 0 }}>
+                Centralized IBM-powered smart monitoring of traffic flow, perimeter CCTV, and municipal lighting.
+              </p>
             </div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.15rem", color: "#0F172A", marginBottom: "0.4rem" }}>
-              Central Command Center
-            </h4>
-            <p style={{ fontSize: "0.85rem", color: "#64748B", lineHeight: 1.55 }}>
-              Centralized IBM-powered smart monitoring of traffic flow, perimeter CCTV, automated emergency response, and municipal street lighting.
-            </p>
           </div>
 
-          <div style={{
-            backgroundColor: "#F8FAFC",
-            border: "1px solid #E2E8F0",
-            padding: "1.5rem",
-            borderRadius: "var(--radius-lg)",
-            transition: "all 0.2s ease"
-          }}>
+          <div className="col-12 col-sm-6 col-lg-3">
             <div style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "10px",
-              backgroundColor: "#E0F2FE",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#0369A1",
-              marginBottom: "1rem"
+              backgroundColor: "#F8FAFC",
+              border: "1px solid #E2E8F0",
+              padding: "1.25rem",
+              borderRadius: "var(--radius-lg)",
+              height: "100%",
+              transition: "all 0.2s ease"
             }}>
-              <Droplet size={22} />
+              <div style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "10px",
+                backgroundColor: "#E0F2FE",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#0369A1",
+                marginBottom: "0.85rem"
+              }}>
+                <Droplet size={20} />
+              </div>
+              <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "#0F172A", marginBottom: "0.35rem" }}>
+                Smart Water & Eco Living
+              </h4>
+              <p style={{ fontSize: "0.82rem", color: "#64748B", lineHeight: 1.5, margin: 0 }}>
+                100% automated electronic water metering, zero-discharge sewage recycling, and rainwater aquifers.
+              </p>
             </div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.15rem", color: "#0F172A", marginBottom: "0.4rem" }}>
-              Smart Water & Eco Living
-            </h4>
-            <p style={{ fontSize: "0.85rem", color: "#64748B", lineHeight: 1.55 }}>
-              100% automated electronic water metering, zero-discharge sewage recycling plant, and extensive rainwater recharging aquifers.
-            </p>
           </div>
 
-          <div style={{
-            backgroundColor: "#F8FAFC",
-            border: "1px solid #E2E8F0",
-            padding: "1.5rem",
-            borderRadius: "var(--radius-lg)",
-            transition: "all 0.2s ease"
-          }}>
+          <div className="col-12 col-sm-6 col-lg-3">
             <div style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "10px",
-              backgroundColor: "#FEF9C3",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#A16207",
-              marginBottom: "1rem"
+              backgroundColor: "#F8FAFC",
+              border: "1px solid #E2E8F0",
+              padding: "1.25rem",
+              borderRadius: "var(--radius-lg)",
+              height: "100%",
+              transition: "all 0.2s ease"
             }}>
-              <Zap size={22} />
+              <div style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "10px",
+                backgroundColor: "#FEF9C3",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#A16207",
+                marginBottom: "0.85rem"
+              }}>
+                <Zap size={20} />
+              </div>
+              <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "#0F172A", marginBottom: "0.35rem" }}>
+                Underground Utilities
+              </h4>
+              <p style={{ fontSize: "0.82rem", color: "#64748B", lineHeight: 1.5, margin: 0 }}>
+                Zero overhead electrical wires or visual clutter. Dedicated underground utility trenches for power and optical fiber.
+              </p>
             </div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.15rem", color: "#0F172A", marginBottom: "0.4rem" }}>
-              Underground Utilities
-            </h4>
-            <p style={{ fontSize: "0.85rem", color: "#64748B", lineHeight: 1.55 }}>
-              Zero overhead electrical wires or visual clutter. Dedicated underground utility trenches for high-voltage power, optical fiber, and cooking gas.
-            </p>
           </div>
 
-          <div style={{
-            backgroundColor: "#F8FAFC",
-            border: "1px solid #E2E8F0",
-            padding: "1.5rem",
-            borderRadius: "var(--radius-lg)",
-            transition: "all 0.2s ease"
-          }}>
+          <div className="col-12 col-sm-6 col-lg-3">
             <div style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "10px",
-              backgroundColor: "#DCFCE7",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#15803D",
-              marginBottom: "1rem"
+              backgroundColor: "#F8FAFC",
+              border: "1px solid #E2E8F0",
+              padding: "1.25rem",
+              borderRadius: "var(--radius-lg)",
+              height: "100%",
+              transition: "all 0.2s ease"
             }}>
-              <Car size={22} />
+              <div style={{
+                width: "42px",
+                height: "42px",
+                borderRadius: "10px",
+                backgroundColor: "#DCFCE7",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#15803D",
+                marginBottom: "0.85rem"
+              }}>
+                <Car size={20} />
+              </div>
+              <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.1rem", color: "#0F172A", marginBottom: "0.35rem" }}>
+                14-Lane DME Access
+              </h4>
+              <p style={{ fontSize: "0.82rem", color: "#64748B", lineHeight: 1.5, margin: 0 }}>
+                Direct access to Delhi (20 mins), Noida Sector 62 (12 mins), and upcoming Jewar Airport expressways.
+              </p>
             </div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.15rem", color: "#0F172A", marginBottom: "0.4rem" }}>
-              14-Lane DME Access
-            </h4>
-            <p style={{ fontSize: "0.85rem", color: "#64748B", lineHeight: 1.55 }}>
-              Seamless travel to Delhi (20 mins), Central Noida Sector 62 (12 mins), and Noida International Airport Jewar via upcoming expressway connectors.
-            </p>
           </div>
         </div>
 
@@ -215,13 +221,8 @@ export default function TownshipHighlights({ onOpenSiteVisit }) {
           border: "1px solid #E2E8F0",
           boxShadow: "0 10px 30px -4px rgba(15, 23, 42, 0.06)"
         }}>
-          {/* Enclave Selector Tabs */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            backgroundColor: "#F8FAFC",
-            borderBottom: "1px solid #E2E8F0"
-          }}>
+          {/* Enclave Selector Tabs (Scrollable on small phones) */}
+          <div className="d-flex overflow-auto flex-nowrap" style={{ backgroundColor: "#F8FAFC", borderBottom: "1px solid #E2E8F0" }}>
             {[
               { id: "oakwood", label: "Oakwood Enclave" },
               { id: "greenwood", label: "Greenwood Enclave" },
@@ -235,12 +236,14 @@ export default function TownshipHighlights({ onOpenSiteVisit }) {
                   background: activeSector === sec.id ? "#FFFFFF" : "transparent",
                   border: "none",
                   borderBottom: activeSector === sec.id ? "3px solid var(--gold-primary)" : "3px solid transparent",
-                  padding: "1rem",
+                  padding: "0.9rem 1.25rem",
                   color: activeSector === sec.id ? "#0F172A" : "#64748B",
                   fontWeight: 700,
-                  fontSize: "0.92rem",
+                  fontSize: "0.9rem",
                   cursor: "pointer",
-                  transition: "all 0.2s"
+                  transition: "all 0.2s",
+                  whiteSpace: "nowrap",
+                  flex: "1 0 auto"
                 }}
               >
                 {sec.label}
@@ -248,30 +251,28 @@ export default function TownshipHighlights({ onOpenSiteVisit }) {
             ))}
           </div>
 
-          {/* Enclave Display View */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            minHeight: "360px"
-          }}>
+          {/* Enclave Display View - Bootstrap Row & Col */}
+          <div className="row g-0">
             {/* Left Content */}
-            <div style={{ padding: "2.5rem", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div className="col-12 col-lg-7 p-3 p-md-4 p-lg-5 d-flex flex-column justify-content-between">
               <div>
-                <div style={{ color: "var(--gold-primary)", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                <div style={{ color: "var(--gold-primary)", fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>
                   {currentSector.tagline}
                 </div>
-                <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.75rem", color: "#0F172A", margin: "0.4rem 0 0.85rem" }}>
+                <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "clamp(1.35rem, 2.5vw, 1.75rem)", color: "#0F172A", margin: "0.35rem 0 0.75rem" }}>
                   {currentSector.title}
                 </h3>
-                <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+                <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.6, marginBottom: "1.25rem" }}>
                   {currentSector.description}
                 </p>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "1.5rem" }}>
+                <div className="row g-2 mb-4">
                   {currentSector.highlights.map((hl, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.45rem", fontSize: "0.85rem", color: "#1E293B", fontWeight: 500 }}>
-                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "var(--gold-primary)" }} />
-                      <span>{hl}</span>
+                    <div key={i} className="col-12 col-sm-6">
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.45rem", fontSize: "0.82rem", color: "#1E293B", fontWeight: 500 }}>
+                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "var(--gold-primary)", flexShrink: 0 }} />
+                        <span>{hl}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -280,21 +281,21 @@ export default function TownshipHighlights({ onOpenSiteVisit }) {
               <div>
                 <button
                   onClick={() => onOpenSiteVisit({ title: currentSector.title })}
-                  className="btn-gold"
-                  style={{ padding: "0.75rem 1.4rem" }}
+                  className="btn-gold w-mobile-100"
+                  style={{ padding: "0.7rem 1.35rem", fontSize: "0.88rem" }}
                 >
                   <MapPin size={16} />
-                  Book VIP Golf-Cart Tour of {currentSector.title}
+                  Book VIP Tour of {currentSector.title}
                 </button>
               </div>
             </div>
 
             {/* Right Photo */}
-            <div style={{ position: "relative", minHeight: "300px", backgroundColor: "#F1F5F9" }}>
+            <div className="col-12 col-lg-5" style={{ minHeight: "260px", backgroundColor: "#F1F5F9" }}>
               <img
                 src={currentSector.image}
                 alt={currentSector.title}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </div>
           </div>
